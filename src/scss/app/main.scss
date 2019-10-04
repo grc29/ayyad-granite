@@ -1,15 +1,7 @@
-body{
-  padding: 50px;
-  background: #f0f0f0;
-}
-
-.wrapper{
-  margin: 0 auto;
-  .img-wrapper{
-    height: 260px;
-  }
-  .card-text{
-    height: 74px;
-    overflow: hidden;
-  }
+body {
+  background: lightgrey;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
 }
