@@ -5,9 +5,11 @@ const path = require('path');
 module.exports = function(){
   return {
     mode: 'development',
-    entry: [
-      './src/app.js'
-    ],
+    entry: {
+      index: './src/js/index.js',
+      gallery: './src/js/gallery.js',
+      contact: './src/js/contact.js'
+    },
     watch: true,
     watchOptions: {
       aggregateTimeout: 300, // Process all changes which happened in this time into one rebuild
@@ -27,8 +29,22 @@ module.exports = function(){
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Webpack starter project',
-        template: path.resolve('./src/index.html')
+        template: './src/index.html',
+        inject: true,
+        chunks: ['index'],
+        filename: 'index.html'
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/gallery.html',
+        inject: true,
+        chunks: ['gallery'],
+        filename: 'gallery.html'
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/contact.html',
+        inject: true,
+        chunks: ['contact'],
+        filename: 'contact.html'
       }),
       new webpack.HotModuleReplacementPlugin()
     ],

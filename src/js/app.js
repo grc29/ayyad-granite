@@ -1,4 +1,4 @@
-import './scss/style.scss';
+import '../scss/style.scss';
 
 // Sticky Nav
 let nav = document.getElementById('nav');
@@ -18,13 +18,16 @@ function myFunction() {
 // Mobile Menu Pop-up
 let open = document.getElementById('menu-icon');
 let menu = document.getElementById('mobile-menu');
-console.log(open);
 open.addEventListener("click", menuIconFunction);
 
 function menuIconFunction() {
     if (menu.classList.contains('active')) {
         menu.classList.remove('active');
+        open.classList.remove('fa-times');
+        open.classList.add('fa-bars');
     } else {
         menu.classList.add('active');
+        open.classList.remove('fa-bars');
+        open.classList.add('fa-times');
     }
 }

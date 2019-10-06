@@ -8,9 +8,11 @@ const path = require('path');
 module.exports = function (env, argv) {
   return {
     mode: 'production',
-    entry: [
-      './src/app.js'
-    ],
+    entry: {
+      index: "./src/js/index.js",
+      gallery: "./src/js/gallery.js",
+      contact: "./src/js/contact.js"
+    },
     optimization: {
       minimizer: [
         new OptimizeCSSAssetsPlugin()
@@ -20,8 +22,22 @@ module.exports = function (env, argv) {
     plugins: [
       new CleanWebpackPlugin(['dist']),
       new HtmlWebpackPlugin({
-        title: 'Webpack starter project',
-        template: path.resolve('./src/index.html')
+        template: './src/index.html',
+        inject: true,
+        chunks: ['index'],
+        filename: 'index.html'
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/gallery.html',
+        inject: true,
+        chunks: ['gallery'],
+        filename: 'gallery.html'
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/contact.html',
+        inject: true,
+        chunks: ['contact'],
+        filename: 'contact.html'
       }),
       new MiniCssExtractPlugin({
         filename: "[name].css",
@@ -90,6 +106,10 @@ module.exports = function (env, argv) {
           test: /\.html$/,
           use: {
             loader: 'html-loader',
+            options: {
+              outputPath: './pages',
+              name: "[name].[ext]"
+            }
           }
         },
       ]

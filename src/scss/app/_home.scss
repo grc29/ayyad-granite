@@ -1,37 +1,14 @@
 #home-content-area {
     display: flex;
     width: 100%;
-    #mobile-menu {
-        display: none;
-        &.active {
-            display: block;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            background: lightcoral;
-        }
-        ul {
-            li {
-                padding: 40px 20px;
-                border-bottom: 1px solid black;
-                margin: 0 auto;
-                &:last-of-type {
-                    border-bottom: 0;
-                }
-                a {
-                    text-decoration: none;
-                    font-size: 7vw;
-                    text-align: center;
-                    margin: 0 auto;
-                }
-            }
-        }
-    }
-    #container {
+    position: relative;
+    .container {
+        position: relative;
+        width: 100%;
         .hero-image {
+            display: none;
+        }
+        .hero-image-m {
             height: 60vh;
             background: url('/images/hero.jpg');
             background-size: cover;
@@ -41,7 +18,76 @@
             padding: 20px;
             background: lightblue;
             p.about-us-txt {
-                font-size: 10vw;
+                font-size: 5vw;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    #home-content-area {
+        display: block;
+        height: 100vh;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            height: 90%;
+            padding: 50px 0;
+            display: flex;
+            .hero-image {
+                width: 50%;
+                background: url('/images/hero.jpg');
+                background-size: cover;
+                display: inline-block;
+            }
+            
+            .home-wrapper {
+                width: 50%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                #nav {
+                    display: flex;
+                    width: 100%;
+                    background: red;
+                    height: auto;
+                    flex: 0 0 auto;
+                    a#site-title {
+                        font-size: 2vw;
+                    }
+                    i#menu-icon {
+                        display: none;
+                    }
+                    ul {
+                        display: inline-block;
+                        li {
+                            display: inline-block;
+                            margin-right: 10px;
+                            a {
+                                text-decoration: none;
+                                color: white;
+                                font-size: 1vw;
+                            }
+                        }
+                    }
+                }
+                .hero-image-m {
+                    order: -1;
+                    width: 50%;
+                    height: auto;
+                    display: none;
+                }
+                .about-us {
+                    height: auto;
+                    flex: 1 1 auto;
+                    p.about-us-txt {
+                        font-size: 1vw;
+                    }
+                }
             }
         }
     }
