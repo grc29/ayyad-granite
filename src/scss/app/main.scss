@@ -1,7 +1,7 @@
 body {
-  background: lightgrey;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
-  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }

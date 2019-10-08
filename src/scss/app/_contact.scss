@@ -1,67 +1,45 @@
 #contact-content-area {
-    display: flex;
+    background: green;
+    height: 100%;
     width: 100%;
-    height: 100vh;
-    .container {
-        position: relative;
-        width: 100%;
-        background: lightblue;
+    margin-top: 77px;
+    #container {
+        height: 100%;
+        background: blue;
+        display: flex;
+        flex-direction: column;
+        &.active {
+            display: none;
+        }
+        .desktop-nav {
+            display: none;
+        }
         .contact-wrapper {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            h2.page-title {
-                color: white;
-                font-size: bold;
-                font-size: 12vw;
-                padding: 20px 0;
+            width: 100%;
+            padding: 20px;
+            flex: 1 1 auto;
+            h3.section-title {
+                font-family: sans-serif;
                 text-align: center;
-            }
-            form {
-                flex: 1 1 auto;
+                margin-bottom: 10px;
             }
             .form-wrapper {
-                margin: 0 auto;
-                width: 85%;
                 display: flex;
-                flex-wrap: wrap;
-                background: lightblue;
-                flex: 1 1 auto;
+                width: 100%;
+                justify-content: center;
                 input {
                     width: 100%;
-                    margin: 0 auto;
                     margin-bottom: 10px;
-                    padding: 15px;
-                    border: none;
-                    font-size: 5vw;
-                    color: orange;
-                    border-bottom: 2px solid orange;
-                    border-right: 2px solid orange;
-                    &::placeholder {
-                        color: orange;
-                        font-size: 5vw;
-                    }
                 }
                 textarea {
                     width: 100%;
-                    margin: 0 auto;
-                    margin-bottom: 25px;
-                    height: 150px;
-                    font-size: 5vw;
-                    border: none;
-                    padding: 15px;
-                    color: orange;
-                    border-bottom: 2px solid orange;
-                    border-right: 2px solid orange;
-                    &::placeholder {
-                        color: orange;
-                        font-size: 5vw;
-                    }
+                    margin-bottom: 10px;
+                    height: 400px;
                 }
-                .btn {
+                input[type=submit] {
                     background: green;
-                    border: none;
-                    color: white;
+                    border: 0;
+                    padding: 10px;
                 }
             }
         }
@@ -70,79 +48,59 @@
 
 @media only screen and (min-width: 1024px) {
     #contact-content-area {
-        display: block;
-        height: 100vh;
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px 0;
-            height: 90%;
-            display: flex;
-            background: transparent;
-            .contact-wrapper {
-                background: lightblue;
-                background: lightgreen;
+        background: orange;
+        width: 90%;
+        height: 90%;
+        margin: 0 auto;
+        #container {
+            flex-direction: row;
+            .desktop-wrapper {
                 width: 100%;
-                height: auto;
                 display: flex;
                 flex-direction: column;
-                #nav {
+                .desktop-nav {
                     display: flex;
-                    width: 100%;
-                    background: red;
-                    height: auto;
-                    flex: 0 0 auto;
-                    a#site-title {
-                        font-size: 2vw;
-                    }
-                    i#menu-icon {
-                        display: none;
-                    }
-                    ul {
-                        display: inline-block;
-                        li {
-                            display: inline-block;
-                            margin-right: 10px;
-                            a {
-                                text-decoration: none;
-                                color: white;
-                                font-size: 1vw;
-                            }
-                        }
-                    }
-                }
-                h2.page-title {
-                    font-size: 2vw;
-                    flex: 0 0 auto;
-                }
-                form {
-                    width: 90%;
-                    flex: 1 1 auto;
+                    width: 80%;
                     margin: 0 auto;
-                    .form-wrapper {
-                        width: 100%; 
-                        padding-bottom: 20px;
-                        input {
-                            width: 90%;
-                            font-size: 2vw;
-                            &::placeholder {
-                                font-size: 2vw;
+                    padding: 0 15px;
+                    background: orange;
+                    align-items: center;
+                    justify-content: space-between;
+                    a#site-title {
+                        font-size: 1vw;
+                        font-family: sans-serif;
+                        text-decoration: none;
+                        color: white;
+                    }
+                    .links {
+                        display: flex;
+                        width: 30%;
+                        .link {
+                            display: block;
+                            padding: 15px;
+                            font-size: 1vw;
+                            font-family: sans-serif;
+                            text-decoration: none;
+                            color: white;
+                            &:hover {
+                                background: blue;
+                                cursor: pointer;
                             }
-                        }
-                        textarea {
-                            width: 90%;
-                            font-size: 2vw;
-                            &::placeholder {
-                                font-size: 2vw;
-                            }
-                        }
-                        .btn {
-                            width: 50%;
-                            margin: 0 auto;
-                            padding: 15px 0;
                         }
                     }
-                } 
+                }
+                .contact-wrapper {
+                    margin: 0 auto;
+                    width: 100%;
+                    padding: 25px 0;
+                    h3.section-title {
+                        margin-bottom: 10px;
+                    }
+                }
+                footer {
+                    font-size: 1vw;
+                    text-align: center;
+                }
             }
         }
     }

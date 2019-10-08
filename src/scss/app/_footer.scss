@@ -1,17 +1,10 @@
 footer {
-    background: yellow;
-    padding: 20px 0;
-    width: 100%;
-    display: flex;
+    padding: 20px;
+    background: #a09ca1;
     font-size: 3vw;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-@media only screen and (min-width: 1024px) {
-    footer {
-        font-size: 1vw;
-        margin: 0 auto;
-        flex: 0 0 auto;
-    }
+    width: 100%;
+    flex: 0 0 auto;
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
 }

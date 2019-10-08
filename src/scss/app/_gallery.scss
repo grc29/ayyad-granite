@@ -1,30 +1,56 @@
 #gallery-content-area {
-    display: flex;
+    background: green;
+    height: 100%;
     width: 100%;
-    .container {
-        position: relative;
-        width: 100%;
-        background: url('../images/granite_bg.jpg');
-        background-repeat: repeat;
-        background-size: contain;
-        h2.page-title {
-            color: white;
-            font-weight: bold;
-            font-size: 12vw;
-            padding: 20px 0;
-            text-align: center;
+    margin-top: 77px;
+    #container {
+        height: 100%;
+        background: blue;
+        display: flex;
+        &.active {
+            display: none;
         }
-        .gallery-box {
-            padding: 20px 0;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(9, 75vh);
-            grid-row-gap: 20px;
-            .gallery-item {
-                background: red;
-                height: 100%;
-                width: 100%;
+        .desktop-nav {
+            display: none;
+        }
+        .content-wrapper {
+            width: 100%;
+            padding: 20px 5px;
+            flex: 1 1 auto;
+            h3.section-title {
+                font-family: sans-serif;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .gallery-box {
+                display: grid;
+                grid-template-rows: 200px 200px 200px;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 5px;
+                grid-row-gap: 5px;
+                .gallery-item {
+                    background: grey;
+                    background-position: center center;
+                    background-size: cover;
+                    &.i1 {
+                        background-image: url('/images/monument_1.jpg');
+                    }
+                    &.i2 {
+                        background-image: url('/images/monument_2.jpg');
+                    }
+                    &.i3 {
+                        background-image: url('/images/monument_3.jpg');
+                    }
+                    &.i4 {
+                        background-image: url('/images/monument_4.jpg');
+                    }
+                    &.i5 {
+                        background-image: url('/images/monument_5.jpg');
+                    }
+                    &.i6 {
+                        background-image: url('/images/monument_6.jpg');
+                    }
+                }
             }
         }
     }
@@ -32,61 +58,65 @@
 
 @media only screen and (min-width: 1024px) {
     #gallery-content-area {
-        display: block;
-        height: 100vh;
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px 0;
-            height: 90%;
-            display: flex;
-            background: transparent;
-            .gallery-wrapper {
-                background: lightblue;
+        background: red;
+        height: 90%;
+        width: 90%;
+        margin: 0 auto;
+        #container {
+            flex-direction: row;
+            height: 100%;
+            .desktop-wrapper {
                 width: 100%;
-                height: auto;
                 display: flex;
                 flex-direction: column;
-                #nav {
+                .desktop-nav {
                     display: flex;
-                    width: 100%;
-                    background: red;
-                    height: auto;
-                    flex: 0 0 auto;
+                    width: 80%;
+                    margin: 0 auto;
+                    padding: 0 15px;
+                    background: orange;
+                    align-items: center;
+                    justify-content: space-between;
                     a#site-title {
-                        font-size: 2vw;
+                        font-size: 1vw;
+                        font-family: sans-serif;
+                        text-decoration: none;
+                        color: white;
                     }
-                    i#menu-icon {
-                        display: none;
-                    }
-                    ul {
-                        display: inline-block;
-                        li {
-                            display: inline-block;
-                            margin-right: 10px;
-                            a {
-                                text-decoration: none;
-                                color: white;
-                                font-size: 1vw;
+                    .links {
+                        display: flex;
+                        width: 30%;
+                        .link {
+                            display: block;
+                            padding: 15px;
+                            font-size: 1vw;
+                            font-family: sans-serif;
+                            text-decoration: none;
+                            color: white;
+                            &:hover {
+                                background: blue;
+                                cursor: pointer;
                             }
                         }
                     }
                 }
-                h2.page-title {
-                    font-size: 2vw;
-                    flex: 0 0 auto;
-                }
-                .gallery-box {
-                    width: 90%;
-                    flex: 1 1 auto; 
-                    grid-template-columns: 1fr 1fr 1fr;
-                    grid-template-rows: repeat(3, 100px);
-                    grid-column-gap: 20px;
+                .content-wrapper {
                     margin: 0 auto;
-                    .gallery-item {
-                        height: 100%;
-                        width: 100%;
-                    }  
+                    width: 100%;
+                    padding: 25px 0;
+                    .gallery-box {
+                        grid-template-columns: auto auto auto;
+                        grid-template-rows: 200px 200px;
+                        grid-column-gap: 10px;
+                        grid-row-gap: 10px;
+                        width: 85%;
+                        margin: 0 auto;
+                        padding: 20px 0;
+                    }
+                }
+                footer {
+                    font-size: 1vw;
+                    text-align: center;
                 }
             }
         }
