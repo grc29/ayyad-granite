@@ -1,87 +1,45 @@
-#home-content-area {
-    height: 100%;
-    width: 100%;
+#content {
     #container {
-        background: #A29C9B;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-        &.active {
-            display: none;
+        .img-wrapper {
+            width: 100%;
+            height: 50vh;
+            background: url('/images/hero.jpg');
+            background-size: cover;
+            background-position: center center;
         }
-        .desktop-nav {
-            display: none;
-        }
-        .content-wrapper {
-            height: 100%;
-            .img-wrapper {
-                width: 100%;
-                background: url('/images/hero.jpg');
-                background-size: cover;
-                background-position: center center;
-                flex: 1 1 auto;
-                height: 70vh;
+        .text-wrapper {
+            width: 100%;
+            padding: 20px 30px;
+            font-family: 'Barlow Condensed', sans-serif;
+            color: #fff;
+            h3.section-title {
+                font-size: 8vw;
+                text-align: center;
+                margin-bottom: 10px;
             }
-            .text-wrapper {
-                width: 100%;
-                padding: 20px;
-                flex: 1 1 auto;
-                background: #A29C9B;
-                h3.section-title {
-                    font-family: 'Barlow Condensed', sans-serif;
-                    text-align: center;
-                    margin-bottom: 15px;
-                    font-size: 8vw;
-                    color: white;
-                }
-                p.about-us {
-                    font-family: 'Barlow Condensed', sans-serif;
-                    font-size: 5vw;
-                    line-height: 1.3;
-                    color: white;
-                }
+            p.about-us {
+                font-size: 5vw;
+                line-height: 1.3;
             }
         }
     }
 }
 
 @media only screen and (min-width: 1024px) {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #home-content-area {
-        height: 90%;
-        width: 90%;
-        margin: 0 auto;
+    #content {
         #container {
-            display: block;
-            flex-direction: none;
-            .desktop-wrapper {
-                width: 100%;
+            .img-wrapper {
+                width: 50%;
                 height: 100%;
-                display: flex;
-                flex-direction: column;
-                .content-wrapper {
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    .img-wrapper {
-                        width: 50%;
-                        height: 100%;
-                    }
-                    .text-wrapper {
-                        width: 50%;
-                        flex: 1 1 auto;
-                        h3.section-title {
-                            font-size: 3vw;
-                        }
-                        p.about-us {
-                            font-size: 1.875vw;
-                        }
-                    }
+            }
+            .text-wrapper {
+                width: 50%;
+                height: 100%;
+                h3.section-title {
+                    font-size: 3vw;
+                }
+                p.about-us {
+                    font-size: 1.875vw;
                 }
             }
         }

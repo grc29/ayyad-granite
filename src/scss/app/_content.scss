@@ -1,0 +1,21 @@
+#content {
+    height: 90%;
+    width: 100%;
+    background: #A29C9B;
+    flex: 1 1 auto;
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+        &.active {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #content {
+        #container {
+            height: 100%;
+        }
+    }
+}

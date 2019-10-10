@@ -1,0 +1,99 @@
+header {
+    width: 100%;
+    flex: 0 0 auto;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(99,99,99,0.75);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(99,99,99,0.75);
+    box-shadow: 0px 5px 5px 0px rgba(99,99,99,0.75);
+    #mobile-nav {
+        width: 100%;
+        padding: 20px;
+        background: #353a47;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a#site-title {
+            font-family: 'Mansalva', sans-serif;
+            font-size: 10vw;
+            text-decoration: none;
+            color: #fff;
+        }
+        i#menu-icon {
+            color: #fff;
+            font-size: 10vw;
+        }
+    }
+    #desktop-nav {
+        display: none;
+    }
+}
+
+#content {
+    #mobile-dropdown {
+        background: #a29c9b;
+        display: none;
+        &.active {
+            display: block;
+            height: 100vh;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            li {
+                padding: 30px;
+                border-bottom: 2px solid #ada6ab;
+                display: flex;
+                justify-content: center;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-family: 'Barlow Condensed', sans-serif;
+                    font-size: 10vw;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    header {
+        #mobile-nav {
+            display: none;
+        }
+        #desktop-nav {
+            display: flex;
+            width: 100%;
+            background: #353a47;
+            justify-content: space-between;
+            a#site-title {
+                font-family: 'Mansalva', sans-serif;
+                font-size: 2.5vw;
+                text-decoration: none;
+                color: #fff;
+                margin: 0 auto;
+                padding: 15px 0;
+            }
+            .links {
+                display: flex;
+                width: 30%;
+                justify-content: flex-end;
+                a.link {
+                    padding: 20px;
+                    font-size: 1.5625vw;
+                    font-family: 'Barlow Condensed', sans-serif;
+                    text-decoration: none;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: background .3s ease-in-out;
+                    &:hover {
+                        background: #5b647a;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

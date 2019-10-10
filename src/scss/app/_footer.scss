@@ -1,4 +1,4 @@
-footer {
+/*footer {
     padding: 20px;
     background: #6F6866;
     font-size: 3vw;
@@ -7,6 +7,24 @@ footer {
     color: white;
     font-family: 'Barlow Condensed', sans-serif;
     text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+    footer {
+        font-size: 1vw;
+    }
+}
+*/
+
+footer {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+    background: #6f6866;
+    font-size: 3vw;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    color: #fff;
 }
 
 @media only screen and (min-width: 1024px) {
