@@ -1,12 +1,10 @@
 #mobile-nav {
     padding: 20px;
-    background: #a19c9f;
+    background: #353A47;
     display: flex;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    position: fixed;
-    top: 0;
     width: 100%;
     a#site-title {
         font-family: 'Mansalva', cursive;
@@ -21,11 +19,12 @@
 }
 
 #mobile-dropdown {
-    background: #babab3;
+    background: #A29C9B;
     height: 100%;
     display: none;
     &.active {
         display: block;
+        height: 100vh;
     }
     ul {
         display: flex;
@@ -52,5 +51,41 @@
 @media only screen and (min-width: 1024px) {
     #mobile-nav {
         display: none;
+    }
+    .desktop-nav {
+        display: flex !important;
+        width: 100%;
+        background: #353a47;
+        justify-content: space-between;
+        flex: 0 0 auto;
+        a#site-title {
+            font-size: 2.5vw;
+            font-family: 'Mansalva', sans-serif;
+            text-decoration: none;
+            color: white;
+            margin: 0 auto;
+            padding: 15px 0;
+        }
+        .links {
+            display: flex;
+            width: 30%;
+            justify-content: flex-end;
+            a.link {
+                height: 100%;
+                padding: 20px;
+                font-size: 1.5625vw;
+                font-family: 'Barlow Condensed', sans-serif;
+                text-decoration: none;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: background .3s ease-in-out;
+                &:hover {
+                    background: #5b647a;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
