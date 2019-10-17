@@ -8,6 +8,10 @@
     <title>Contact | Ayyad Granite</title>
 </head>
 <body>
+    <?php
+        $name = $_POST['name'];
+        echo $name;
+    ?>
     <div class="desktop-wrapper">
         <header>
             <div id="mobile-nav">
@@ -33,12 +37,13 @@
                 <div class="contact-wrapper">
                     <h3 class="section-title">Contact Us</h3>
                     <div class="form-wrapper">
-                        <form action="">
+                        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
+                            <input type="hidden" name="token" value="<?php echo $token; ?>">
                             <input type="text" name="name" placeholder="Name">
                             <input type="text" name="email" placeholder="Email">
                             <input type="text" name="number" placeholder="Phone Number">
                             <textarea name="message" placeholder="Message"></textarea>
-                            <input type="submit">
+                            <input type="submit" id="submit-btn">
                         </form>
                     </div>
                 </div>
